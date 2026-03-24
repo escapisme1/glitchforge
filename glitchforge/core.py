@@ -1,4 +1,5 @@
 import copy
+from typing import Dict
 import numpy as np
 from PIL import Image
 
@@ -20,7 +21,7 @@ def run_pipeline(image: Image.Image, config: dict, seed: int = 0) -> Image.Image
     arr = np.array(image.convert("RGB"), dtype=np.uint8)
 
     # Count how many times each effect name has been seen (for _0, _1 aliasing)
-    call_counts: dict[str, int] = {}
+    call_counts: Dict[str, int] = {}
 
     for step_idx, effect_name in enumerate(config["pipeline"]):
         effect_fn = EFFECT_REGISTRY[effect_name]

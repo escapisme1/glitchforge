@@ -2,6 +2,7 @@ import argparse
 import copy
 import random
 import sys
+from typing import Optional
 
 from PIL import Image
 
@@ -91,7 +92,7 @@ Examples:
     return p
 
 
-def _preset_name(args) -> str | None:
+def _preset_name(args) -> Optional[str]:
     for name in ("p1", "p2", "p3", "p4"):
         if getattr(args, name, False):
             return name
@@ -175,7 +176,7 @@ def _apply_manual_params(config: dict, args, seed: int) -> None:
         config["noise"]["noise_type"] = args.noise_type
 
 
-def _save_image(image: Image.Image, path: str, fmt: str | None, quality: int) -> None:
+def _save_image(image: Image.Image, path: str, fmt: Optional[str], quality: int) -> None:
     save_kwargs: dict = {}
 
     if fmt:
