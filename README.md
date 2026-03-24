@@ -26,13 +26,7 @@ glitchforge applies image-space corruption effects to photos: channel separation
 ## Install
 
 ```bash
-pip install glitchforge
-```
-
-Or from source:
-
-```bash
-git clone https://github.com/yourusername/glitchforge
+git clone https://github.com/escapisme1/glitchforge
 cd glitchforge
 pip install -e .
 ```
