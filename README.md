@@ -16,9 +16,10 @@ glitchforge applies image-space corruption effects to photos: channel separation
 
 | Original | `--p1` MELTDOWN | `--p2` BLOCKROT | `--p3` FLOWSORT | `--p4` SCANBURN |
 |---|---|---|---|---|
-| *(your photo)* | Vertical color bleed | Block datamosh | Pixel sort smear | CRT scan-line dropout |
+| ![](/tests/input/toucan.jpg) | ![](/tests/output/toucan_p1.png) | ![](/tests/output/toucan_p2.png) | ![](/tests/output/toucan_p3.png) | ![](/tests/output/toucan_p4.png) |
+| ![](/tests/input/ampere.jpg) | ![](/tests/output/ampere_p1.jpg) | ![](/tests/output/ampere_p2.jpg) | ![](/tests/output/ampere_p3.jpg) | ![](/tests/output/ampere_p4.jpg) |
+| ![](/tests/input/vera-rubin.jpg) | ![](/tests/output/vera-rubin_p1.jpg) | ![](/tests/output/vera-rubin_p2.jpg) | ![](/tests/output/vera-rubin_p3.jpg) | ![](/tests/output/vera-rubin_p4.jpg) |
 
-*(add example output images here)*
 
 ---
 
@@ -36,7 +37,7 @@ cd glitchforge
 pip install -e .
 ```
 
-**Requirements:** Python 3.9+, Pillow, NumPy. That's it.
+**Requirements:** Python 3.9+, Pillow, NumPy.
 
 ---
 
@@ -166,20 +167,3 @@ glitchforge photo.jpg out.png --p3 --strength 0.6 --sort-axis cols
 
 **Noise** injects random pixel corruption: dead pixels, saturated color bursts, or entire dropped scan-lines set to black.
 
----
-
-## Note on "True" Datamoshing
-
-Real datamoshing requires encoding video as H.264 and corrupting the bitstream (removing I-frames, mangling motion vectors). This tool simulates the *visual appearance* of those artifacts without requiring ffmpeg or video encoding. If you need genuine bitstream-level corruption, look into ffmpeg-based datamosh pipelines.
-
----
-
-## License
-
-MIT — do whatever you want, attribution appreciated.
-
----
-
-## Contributing
-
-Pull requests welcome. Keep dependencies minimal — Pillow and NumPy only (no hard scipy/numba deps). New effects should live in `glitchforge/effects/` and follow the `(arr: np.ndarray, ...) -> np.ndarray` interface. Add tests.
