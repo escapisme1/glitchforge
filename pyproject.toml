@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glitchforge"
+version = "0.1.0"
+description = "CLI image glitch and datamosh tool"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = [
+    "Pillow>=10.0",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+fast = ["scipy>=1.10"]  # Optional: faster color drift
+
+[project.scripts]
+glitchforge = "glitchforge.cli:main"
