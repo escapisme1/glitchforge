@@ -2,10 +2,6 @@
 
 > CLI image glitch and datamosh tool. Melted pixels, scan-line corruption, color bleed, block displacement.
 
-![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)
-![License MIT](https://img.shields.io/badge/license-MIT-green)
-![Dependencies](https://img.shields.io/badge/deps-Pillow%20%2B%20NumPy-orange)
-
 ---
 
 ## What it does
@@ -16,9 +12,9 @@ glitchforge applies image-space corruption effects to photos: channel separation
 
 | Original | `--p1` MELTDOWN | `--p2` BLOCKROT | `--p3` FLOWSORT | `--p4` SCANBURN |
 |---|---|---|---|---|
-| ![](/tests/input/toucan.jpg) | ![](/tests/output/toucan_p1.png) | ![](/tests/output/toucan_p2.png) | ![](/tests/output/toucan_p3.png) | ![](/tests/output/toucan_p4.png) |
-| ![](/tests/input/ampere.jpg) | ![](/tests/output/ampere_p1.jpg) | ![](/tests/output/ampere_p2.jpg) | ![](/tests/output/ampere_p3.jpg) | ![](/tests/output/ampere_p4.jpg) |
-| ![](/tests/input/vera-rubin.jpg) | ![](/tests/output/vera-rubin_p1.jpg) | ![](/tests/output/vera-rubin_p2.jpg) | ![](/tests/output/vera-rubin_p3.jpg) | ![](/tests/output/vera-rubin_p4.jpg) |
+| ![](examples/input/toucan.jpg) | ![](examples/outputs/toucan_p1.png) | ![](examples/outputs/toucan_p2.png) | ![](examples/outputs/toucan_p3.png) | ![](examples/outputs/toucan_p4.png) |
+| ![](examples/input/ampere.jpg) | ![](examples/outputs/ampere_p1.jpg) | ![](examples/outputs/ampere_p2.jpg) | ![](examples/outputs/ampere_p3.jpg) | ![](examples/outputs/ampere_p4.jpg) |
+| ![](examples/input/vera-rubin.jpg) | ![](examples/outputs/vera-rubin_p1.jpg) | ![](examples/outputs/vera-rubin_p2.jpg) | ![](examples/outputs/vera-rubin_p3.jpg) | ![](examples/outputs/vera-rubin_p4.jpg) |
 
 
 ---
@@ -58,7 +54,7 @@ glitchforge input.jpg output.png --p2 --seed 42
 | Flag | Name | Effect |
 |---|---|---|
 | `--p1` | MELTDOWN | Channel separation + scan-line displacement + color bleed. Neon colors dissolving sideways. |
-| `--p2` | BLOCKROT | Block-level displacement + color bars + scanline dropout. Mimics MPEG datamosh corruption. |
+| `--p2` | BLOCKROT | Block-level displacement + channel separation + scanline dropout. Mimics MPEG datamosh corruption. |
 | `--p3` | FLOWSORT | Pixel sorting by luminance and saturation. Colors flow in diagonal waves. |
 | `--p4` | SCANBURN | Heavy scan-line smear + color drift + chromatic aberration. CRT signal collapse. |
 
